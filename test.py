@@ -42,6 +42,14 @@ class TestSort(unittest.TestCase):
             sorted_data,
             ['bus', '-999', '8', '888', 'car']
         )
+    
+    def test_sort_case7(self):
+        data = ['12', '2', 'bus', '21']
+        sorted_data = sort_algorithm(data)
+        self.assertEqual(
+            sorted_data,
+            ['2', '12', 'bus', '21']
+        )
 
 
 if __name__ == '__main__':

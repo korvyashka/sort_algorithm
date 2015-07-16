@@ -21,15 +21,17 @@ def sort_algorithm(data):
             return False
 
     is_int_map = map(_int_mapper, data)
+    for i, x in enumerate(is_int_map):
+        if x:
+            data[i] = int(data[i])
+
     data.sort()
-
     result = range(len(data))
-
     string_indexes = []
 
     for index, is_int in enumerate(is_int_map):
         if is_int:
-            result[index] = data.pop(0)
+            result[index] = str(data.pop(0))
         else:
             string_indexes.append(index)
 
